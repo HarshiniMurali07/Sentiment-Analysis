@@ -13,7 +13,7 @@ if st.button('Predict'):
     if review.strip():
         transformed_review = vectorizer.transform([review])
         prediction = model.predict(transformed_review)[0]
-        sentiment = 'Positive' if prediction == positive else 'Negative'
+        sentiment = 'Positive' if prediction == 0 else 'Negative'
         st.write(f'The sentiment is: **{sentiment}**')
     else:
         st.write('Please enter a valid review.')
